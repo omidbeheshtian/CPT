@@ -1,3 +1,4 @@
+<?php
 add_action('init', 'example_post_type');
 function example_post_type()
 {
@@ -21,7 +22,7 @@ function example_post_type()
         'labels' => $labels,
         'description' => __('example'),
         'rewrite' => array('slug' => 'example'),/*your link after your site */
-		'public' => true,
+        'public' => true,
         'has_archive' => true,
         'show_in_nav_menus' => false,
         'menu_icon' => 'dashicons-megaphone',/*your icon*/
@@ -45,13 +46,14 @@ function example_post_type()
 
 function creat_example_tax(){
     register_taxonomy(
-    'type',
-    'example',
-    array(
-        'label' => 'نوع example',
-        'rewrite' => array( 'slug' => 'type' ),
-        'hierarchical' => true,
-    )
+        'type',
+        'example',
+        array(
+            'label' => 'نوع example',
+            'rewrite' => array( 'slug' => 'type' ),
+            'hierarchical' => true,
+        )
     );
 }
 add_action('init', 'creat_example_tax');
+
