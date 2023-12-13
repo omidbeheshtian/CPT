@@ -1,31 +1,31 @@
 <?php
 add_action('init', 'example_post_type');
-function example_post_type()
-{
+
+function example_post_type() {
     $labels = array(
-        'name' => 'example ها',
-        'singular_name' => 'example ها',
-        'add_new' => 'اضافه کردن example',
-        'add_new_item' => 'اضافه کردن example ها',
-        'edit_item' => 'ویرایش example',
-        'new_item' => 'example جدید',
-        'all_items' => 'همه example ها',
-        'view_item' => 'دیدن example',
-        'search_items' => 'جستجو در example ها',
-        'not_found' => 'هیچ exampleی یافت نشد',
-        'not_found_in_trash' => 'هیچ exampleی در زباله دان نیست',
+        'name' => __('Examples'),
+        'singular_name' => __('Example'),
+        'add_new' => __('Add New Example'),
+        'add_new_item' => __('Add New Example'),
+        'edit_item' => __('Edit Example'),
+        'new_item' => __('New Example'),
+        'all_items' => __('All Examples'),
+        'view_item' => __('View Example'),
+        'search_items' => __('Search Examples'),
+        'not_found' => __('No examples found'),
+        'not_found_in_trash' => __('No examples found in Trash'),
         'parent_item_colon' => '',
-        'menu_name' => 'example ها',
+        'menu_name' => __('Examples'),
     );
 
     $args = array(
         'labels' => $labels,
-        'description' => __('example'),
-        'rewrite' => array('slug' => 'example'),/*your link after your site */
+        'description' => __('Example'),
+        'rewrite' => array('slug' => 'example'),
         'public' => true,
         'has_archive' => true,
         'show_in_nav_menus' => false,
-        'menu_icon' => 'dashicons-megaphone',/*your icon*/
+        'menu_icon' => 'dashicons-megaphone',
         'supports' => array(
             'title',
             'editor',
@@ -39,21 +39,21 @@ function example_post_type()
             'page-attributes'
         )
     );
+
     register_post_type('example', $args);
 }
 
-// register taxonomy
-
-function creat_example_tax(){
+// Register taxonomy
+function create_example_tax() {
     register_taxonomy(
         'type',
         'example',
         array(
-            'label' => 'نوع example',
-            'rewrite' => array( 'slug' => 'type' ),
+            'label' => __('Example Type'),
+            'rewrite' => array('slug' => 'example-type'),
             'hierarchical' => true,
         )
     );
 }
-add_action('init', 'creat_example_tax');
 
+add_action('init', 'create_example_tax');
