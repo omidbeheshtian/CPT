@@ -1,6 +1,6 @@
 === Custom Post Type ===
 Contributors: Omid Beheshtian
-Tags: plugin, CPT, Custom Post Type
+Tags: plugin, CPT, Custom Post Types
 Requires at least: 4.0
 Tested up to: 5.9
 Stable tag: 1.0
