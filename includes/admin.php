@@ -60,3 +60,22 @@ function post_type_name_callback() {
 
     echo "<input type='text' name='custom_post_types_options[post_type_name]' value='$post_type_name' />";
 }
+// Add taxonomy registration
+add_action('init', 'create_custom_taxonomy');
+
+function create_custom_taxonomy() {
+    $labels = array(
+        'name' => 'Custom Taxonomy',
+        'singular_name' => 'Custom Taxonomy',
+        // Add other labels as needed
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'hierarchical' => true,
+        // Add other arguments as needed
+    );
+
+    register_taxonomy('custom_taxonomy', array('custom_post_type'), $args);
+}
